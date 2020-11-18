@@ -1,16 +1,18 @@
 import React from "react";
 import "./Header.css";
-import SearchIcon from '@material-ui/icons/Search';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 const Header = () => {
   return (
     <div className="header">
-      <img
-        src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        className="header__logo"
-      />
-
+      <a href="/">
+        <img
+          src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          className="header__logo"
+          alt="header logo"
+        />
+      </a>
       <div className="header__search">
         <input className="header__searchInput" type="text" />
         <SearchIcon className="header__searchIcon" />
@@ -36,6 +38,6 @@ const Header = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

@@ -1,14 +1,26 @@
-import './App.css';
-import Header from './Header/Header';
+import "./App.css";
+import Header from "./Header/Header";
+import Home from "./Home/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
     //BEM
-    <div className="app">
-      <Header />
-
-    </div>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/checkout">
+            <Header />
+            <Home />
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
