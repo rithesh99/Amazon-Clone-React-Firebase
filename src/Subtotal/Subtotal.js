@@ -9,7 +9,7 @@ import { getCartTotal } from "../State/Reducer";
 function Subtotal() {
 
   const history = useHistory();
-  const [{cart},dispatch] = useStateValue();
+  const [{cart}] = useStateValue();
  
   return (
     <div className="subtotal">
@@ -18,7 +18,7 @@ function Subtotal() {
           <>
             <p>
               Subtotal ({cart?.length} items):
-              <strong>{value}</strong>
+              <strong> {value}</strong>
             </p>
             <small className="subtotal__gift">
               <input type="checkbox" />
@@ -30,7 +30,7 @@ function Subtotal() {
         value={getCartTotal(cart)}
         displayType={"text"}
         thousandSeparator={true}
-        prefix={"₹"}
+        prefix={"₹ "}
       />
       <button onClick={e => history.push('/payment')}>Proceed to Checkout</button>
     </div>
