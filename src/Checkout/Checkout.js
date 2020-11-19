@@ -16,7 +16,7 @@ function Checkout() {
           alt="ad pic"
         />
         <div>
-          {user ? (<h3>Hello, {user?.email}</h3>) : (<h3>Hello, Guest</h3>)}
+          {user ? (<h3>Hello, {user?.name}</h3>) : (<h3>Hello, Guest</h3>)}
           <h2 className="checkout__title">Your shopping Basket</h2>
 
           {cart.map((item) => (
