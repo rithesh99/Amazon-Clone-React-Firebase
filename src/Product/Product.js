@@ -10,7 +10,6 @@ export default function Product({id, title, image, price, rating }) {
   const ratingbArray = Array(bnum).fill(true);
   // eslint-disable-next-line ---- state is assigned but never used
   const [state,dispatch] = useStateValue();
-
   function addToCart(){
     //dispatch the item into the data layer
     dispatch({
@@ -23,7 +22,7 @@ export default function Product({id, title, image, price, rating }) {
         rating: rating
       }
     })
-  }
+   }
 
   return (
     <div className="product">
