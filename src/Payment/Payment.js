@@ -25,6 +25,10 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState(true);
 
   useEffect(() => {
+    console.log("userrrr",user);
+    if (user === null) {
+      history.push("/login");
+    }
     // generate the special stripe secret which allows us to charge a customer
     const getClientSecret = async () => {
       const response = await axios({
@@ -36,6 +40,7 @@ function Payment() {
     };
 
     getClientSecret();
+    // eslint-disable-next-line
   }, [cart]);
 
   // console.log("THE SECRET IS >>>", clientSecret);
@@ -46,7 +51,7 @@ function Payment() {
     event.preventDefault();
     setProcessing(true);
 
-    const payload = await stripe
+     await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
@@ -101,7 +106,7 @@ function Payment() {
             <p>Nungampaakkam,</p>
             <p>Chennai,</p>
             <p>600028.</p>
-            <p>+91 {user.number}</p>
+            <p>+91 {user?.number}</p>
           </div>
         </div>
 
